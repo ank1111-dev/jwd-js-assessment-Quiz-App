@@ -21,8 +21,15 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   const start = document.querySelector('#start');
+
+  //Added DOM elements
+  const display = document.querySelector('#time');
+  const submit = document.querySelector('#btnSubmit');
+  const reset = document.querySelector('#btnReset');
+  const score = document.querySelector('#score');
+
   start.addEventListener('click', function (e) {
-    document.querySelector('#quizBlock').style.display = 'block';
+     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
   // quizArray QUESTIONS & ANSWERS
@@ -44,7 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
     },
-    
+
     //New questions added
     {
       q: 'Which is the largest country in the world?',

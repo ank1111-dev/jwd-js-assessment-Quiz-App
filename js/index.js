@@ -40,10 +40,23 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 3,
     },
     {
-      q: 'What is the capital of Australia',
+      q: 'What is the capital of Australia?',
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
     },
+    
+    //New questions added
+    {
+      q: 'Which is the largest country in the world?',
+      o: ['China', 'Canada', 'Russia', 'United States'],
+      a: 3,
+    },
+    {
+      q: 'Which is the longest river in the world?',
+      o: ['Amazon', 'Nile', 'Yellow', 'Yangtze'],
+      a: 2,
+    },
+
   ];
 
   // function to Display the quiz questions and answers from the object

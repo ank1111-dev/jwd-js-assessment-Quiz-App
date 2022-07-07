@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
        return score;
   };
 
-  // Event listener for submit button
+  // Event listener for the submit button, which will display the score and highlight 
   submit.addEventListener('click', (e) => {
     e.preventDefault();
     totalScore = calculateScore();
@@ -119,6 +119,10 @@ window.addEventListener('DOMContentLoaded', () => {
    
   });
 
+  //Reload the page when the reset button is clicked
+  reset.addEventListener('click', () => {
+    window.location.reload();
+  })
  
   // call the displayQuiz function
   displayQuiz();

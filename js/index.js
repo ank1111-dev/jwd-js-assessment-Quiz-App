@@ -31,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   start.addEventListener('click', function (e) {
      document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
+    startTimer(time, display);//Function to display timer
   });
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
@@ -110,12 +111,49 @@ window.addEventListener('DOMContentLoaded', () => {
        return score;
   };
 
+  //Add a countdown timer 
+
+  let submitStatus = 0;
+  let time = 10;
+  function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(() => {
+      minutes = parseInt(timer / 60, 10)
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+      if (display.textContent == '00:00'){
+        totalScore = calculateScore();
+        score.innerHTML = `Total score: ${totalScore}`;
+        display.textContent = "Time Up";
+        submit.style.display = 'none';
+        return
+      }
+
+      if(submitStatus === 1){
+        clearInterval(timerDown);
+        display.textContent = "Quiz submitted.";
+      } 
+
+      if (--timer < 0){
+        timer = duration;
+      }        
+   
+    }, 1000);
+  }
+
+          
+
   // Event listener for the submit button, which will display the score and highlight 
   submit.addEventListener('click', (e) => {
     e.preventDefault();
     totalScore = calculateScore();
     score.innerHTML = `Total score: ${totalScore}`;
     submit.style.display = 'none';
+    submitStatus ===1;
    
   });
 

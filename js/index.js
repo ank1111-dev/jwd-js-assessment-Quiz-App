@@ -92,8 +92,8 @@ window.addEventListener('DOMContentLoaded', () => {
         //highlight the li if it is the correct answer
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
-        console.log(li);
-        console.log(r);
+        //console.log(li);
+        //console.log(r);
         liElement = document.querySelector('#' + li);
         radioElement = document.querySelector('#' + r);
 
@@ -120,14 +120,18 @@ window.addEventListener('DOMContentLoaded', () => {
   let time = 5;
   function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
-    setInterval(() => {
+    const timeout = setInterval(() => {
       minutes = parseInt(timer / 60, 10)
       seconds = parseInt(timer % 60, 10);
 
       minutes = minutes < 10 ? "0" + minutes : minutes;
       seconds = seconds < 10 ? "0" + seconds : seconds;
 
+      //Displaying time on window
+
       display.textContent = minutes + ":" + seconds;
+
+      //Displaying content when time is over 
       if (display.textContent == '00:00'){
         totalScore = calculateScore();
         score.innerHTML = `Total score: ${totalScore}`;
@@ -137,8 +141,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       if(submitStatus === 1){
-        clearInterval(timerDown);
-        display.textContent = "Quiz submitted.";
+        clearInterval(timeout);
+        display.textContent = "Quiz submitted"
       } 
 
       if (--timer < 0){

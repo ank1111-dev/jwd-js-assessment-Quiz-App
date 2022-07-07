@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //Add a countdown timer 
 
   let submitStatus = 0;
-  let time = 10;
+  let time = 60;
   function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
     const timeout = setInterval(() => {

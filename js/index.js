@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (display.textContent == '00:00'){
         totalScore = calculateScore();
         score.innerHTML = `Total score: ${totalScore}`;
-        display.textContent = "Time Up";
+        display.textContent = "Time Up!!";
         submit.style.display = 'none';
         return
       }

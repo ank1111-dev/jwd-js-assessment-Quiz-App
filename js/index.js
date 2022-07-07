@@ -91,20 +91,35 @@ window.addEventListener('DOMContentLoaded', () => {
         //highlight the li if it is the correct answer
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
+        console.log(li);
+        console.log(r);
         liElement = document.querySelector('#' + li);
         radioElement = document.querySelector('#' + r);
 
         if (quizItem.a == i) {
           //change background color of li element here
+          liElement.style.backgroundColor = "green";
         }
 
-        if (radioElement.checked) {
+        if (radioElement.checked && quizItem.a === i) {
           // code for task 1 goes here
+          score = score + 1;  
         }
       }
     });
+       return score;
   };
 
+  // Event listener for submit button
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    totalScore = calculateScore();
+    score.innerHTML = `Total score: ${totalScore}`;
+    submit.style.display = 'none';
+   
+  });
+
+ 
   // call the displayQuiz function
   displayQuiz();
 });

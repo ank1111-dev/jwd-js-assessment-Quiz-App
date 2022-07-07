@@ -100,11 +100,14 @@ window.addEventListener('DOMContentLoaded', () => {
         if (quizItem.a == i) {
           //change background color of li element here
           liElement.style.backgroundColor = "green";
-        }
+        } 
+        // else {
+        //   liElement.style.backgroundColor = "red";
+        // }
 
         if (radioElement.checked && quizItem.a === i) {
           // code for task 1 goes here
-          score = score + 1;  
+          score ++;  
         }
       }
     });
@@ -114,7 +117,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //Add a countdown timer 
 
   let submitStatus = 0;
-  let time = 10;
+  let time = 5;
   function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
     setInterval(() => {

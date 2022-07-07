@@ -57,12 +57,12 @@ window.addEventListener('DOMContentLoaded', () => {
     {
       q: 'Which is the largest country in the world?',
       o: ['China', 'Canada', 'Russia', 'United States'],
-      a: 3,
+      a: 2,
     },
     {
       q: 'Which is the longest river in the world?',
       o: ['Amazon', 'Nile', 'Yellow', 'Yangtze'],
-      a: 2,
+      a: 1,
     },
 
   ];
@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //Add a countdown timer 
 
   let submitStatus = 0;
-  let time = 5;
+  let time = 10;
   function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
     const timeout = setInterval(() => {
